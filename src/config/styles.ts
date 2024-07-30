@@ -6,6 +6,10 @@ const colors = {
   slider: '#09043E',
   orange: '#FF2410',
   white: '#ffffff',
+
+  activeBackground: '#c0c2d5',
+  activeHover: '#9395B8',
+  backgroundHover: '#d6d6d7'
 };
 
 const spacing = {
@@ -16,6 +20,7 @@ const spacing = {
 
 const rounded = {
   md: '0.375rem',
+  xl: '0.75rem',
 };
 
 const typography = {

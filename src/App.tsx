@@ -3,7 +3,7 @@ import Header from '@/components/Header.tsx';
 
 import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
-import Home from '@/components/Home.tsx';
+import Home from '@/components/Home/Home.tsx';
 
 function App() {
   return (

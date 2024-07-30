@@ -1,10 +1,11 @@
 import React from 'react';
 import SimpleSlider from '@/components/Home/Slider.tsx';
+import Filter from '@/components/Home/Filter.tsx';
+import News from '@/components/Home/News.tsx';
 
 const Home = () => {
   return (
-    <div
-      style={{
+    <div style={{
         display: 'flex',
         flexDirection: 'column',
         gap: '10px',
@@ -17,10 +18,11 @@ const Home = () => {
     >
       <SimpleSlider />
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px' }}>block 1</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px' }}>block 2</div>
+      <div style={{ display: 'flex', gap: '20px', width: '90%' }}>
+        <News />
+        <Filter />
       </div>
+
     </div>
   );
 };

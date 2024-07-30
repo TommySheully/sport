@@ -14,8 +14,17 @@ import rating from './header/rating.svg';
 import profile from './header/profile.svg';
 import right from './slider/right.svg';
 import left from './slider/left.svg';
+import body from './news/body.png';
+import eye from './news/eye.svg';
+import comments from './news/comments.svg';
+import vadim from './news/user/Vadim.png';
+import artem from './news/user/Artem.png';
+import konstantin from './news/user/Konst.png';
 
 export {
+  konstantin,
+  artem,
+  vadim,
   competitions,
   arrow_down,
   map,
@@ -32,4 +41,7 @@ export {
   kz,
   right,
   left,
+  body,
+  comments,
+  eye
 };
