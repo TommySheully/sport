@@ -1,0 +1,49 @@
+import menu from './header/menu.svg';
+import competitions from './header/competitions.svg';
+import arrow_down from './header/arrow_down.svg';
+import home from './header/home.svg';
+import live from './header/live.svg';
+import logo from './header/logo.svg';
+import logoDop from './header/logoDop.svg';
+import ru from './header/ru.svg';
+import kz from './header/kz.svg';
+import map from './header/map.svg';
+import market from './header/market.svg';
+import notification from './header/notification.svg';
+import org from './header/org.svg';
+import rating from './header/rating.svg';
+import profile from './header/profile.svg';
+import right from './slider/right.svg';
+import left from './slider/left.svg';
+import body from './news/body.png';
+import eye from './news/eye.svg';
+import comments from './news/comments.svg';
+import vadim from './news/user/Vadim.png';
+import artem from './news/user/Artem.png';
+import konstantin from './news/user/Konst.png';
+
+export {
+  konstantin,
+  menu,
+  artem,
+  vadim,
+  competitions,
+  arrow_down,
+  map,
+  org,
+  ru,
+  market,
+  rating,
+  logo,
+  logoDop,
+  live,
+  home,
+  notification,
+  profile,
+  kz,
+  right,
+  left,
+  body,
+  comments,
+  eye
+};
