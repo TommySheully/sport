@@ -12,5 +12,24 @@ import notification from './header/notification.svg';
 import org from './header/org.svg';
 import rating from './header/rating.svg';
 import profile from './header/profile.svg';
+import right from './slider/right.svg';
+import left from './slider/left.svg';
 
-export { competitions, arrow_down, map, org, ru, market, rating, logo, logoDop, live, home, notification, profile, kz };
+export {
+  competitions,
+  arrow_down,
+  map,
+  org,
+  ru,
+  market,
+  rating,
+  logo,
+  logoDop,
+  live,
+  home,
+  notification,
+  profile,
+  kz,
+  right,
+  left,
+};

@@ -28,5 +28,6 @@ const Main = styled('div')(() => ({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between',
+  justifyContent: 'start',
+  alignItems: 'center',
 }));

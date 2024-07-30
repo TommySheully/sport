@@ -2,7 +2,7 @@ import React from 'react';
 import { arrow_down, kz, logo, profile, ru } from '@/assets';
 import { AppBar, Box, Button, Container, Link, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import styled from 'styled-components';
-import styles from '@/styles.ts';
+import styles from '@/config/styles.ts';
 import { pages } from '@/config/pages.ts';
 
 function Header() {
