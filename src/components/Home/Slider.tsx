@@ -174,10 +174,14 @@ const TextWrapper = styled.div`
 `;
 
 const SliderWrapper = styled.div`
-  width: 90%;
-  max-width: 1160px;
-  margin: 0 auto;
-  overflow: hidden;
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    @media (max-width: 1060px) {
+        display: none;
+    }
 `;
 
 const OrangeButton = styled(Button)<ButtonProps>`

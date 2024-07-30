@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, ButtonGroup, Card, CardActions, Skeleton, Typography } from '@mui/material';
+import { Button, ButtonGroup, Card, Skeleton, Typography } from '@mui/material';
 import styles from '@/config/styles.ts';
 import { comments } from '@/assets';
 import styled from 'styled-components';
@@ -30,60 +30,54 @@ const buttons = [
 const Filter = () => {
   const [activeButton, setActiveButton] = useState<string | null>('all');
 
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '30%' }}>
-      <Card sx={{ w: '90%', borderRadius: styles.rounded.xl, padding: '20px' }}>
-        <Typography gutterBottom variant="h4" component="div">
+    <ContentWrapper >
+      <FilterCard>
+        <Typography gutterBottom variant="h4" component="div" style={{padding: '10px'}}>
           Фильтр ленты
         </Typography>
-        <CardActions>
-          <Box
+
+          <ButtonGroup
+            variant="text"
+            orientation="vertical"
+            aria-label="Vertical button group"
+            fullWidth={true}
             sx={{
-              display: 'flex',
+              margin: '10px',
+              '& .MuiButtonGroup-grouped:not(:last-of-type)': {
+                borderColor: 'transparent',
+              },
             }}
           >
-            <ButtonGroup
-              variant="text"
-              orientation="vertical"
-              aria-label="Vertical button group"
-              sx={{
-                '& .MuiButtonGroup-grouped:not(:last-of-type)': {
-                  borderColor: 'transparent',
-                },
-              }}
-            >
-              {buttons.map((btn) => (
-                <ColorButton
-                  key={btn.key}
-                  active={activeButton === btn.key}
-                  onClick={() => setActiveButton(btn.key)}
+            {buttons.map((btn) => (
+              <ColorButton
+                key={btn.key}
+                active={activeButton === btn.key}
+                onClick={() => setActiveButton(btn.key)}
+              >
+                <Typography
+                  variant="body2"
+                  style={{ display: 'flex', alignItems: 'center', gap: '3px' }}
+                  color="text.secondary"
                 >
-                  <Typography
-                    variant="body2"
-                    style={{ display: 'flex', alignItems: 'center', gap: '3px' }}
-                    color="text.secondary"
-                  >
-                    <img src={btn.icon} alt="icon" width={20} height={20} />
-                    {btn.label}
-                  </Typography>
-                </ColorButton>
-              ))}
-            </ButtonGroup>
-          </Box>
-        </CardActions>
-      </Card>
-      <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', w: '100%', borderRadius: styles.rounded.xl, padding: '20px', height: '540px' }}>
-        <Skeleton variant="text" width="100%" height={100} />
-        <Skeleton variant="rectangular" width="100%" height={200} />
-        <Skeleton variant="text" width="100%" height={100} />
-        <Skeleton variant="rectangular" width="100%" height={200} />
-      </Card>
-      <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', w: '100%', borderRadius: styles.rounded.xl, padding: '0 20px' }}>
-        <Skeleton variant="text" width="100%" height={100} />
-        <Skeleton variant="text" width="100%" height={100} />
-      </Card>
-    </div>
+                  <img src={btn.icon} alt="icon" width={20} height={20} />
+                  {btn.label}
+                </Typography>
+              </ColorButton>
+            ))}
+          </ButtonGroup>
+      </FilterCard>
+      <CustomCard>
+        <Skeleton variant="text" width="90%" height={100} style={{margin: '10px 0'}} />
+        <Skeleton variant="text" width="90%" height={200} style={{margin: '10px'}} />
+        <Skeleton variant="text" width="90%" height={100} style={{margin: '10px 0'}}/>
+        <Skeleton variant="text" width="90%" height={200} style={{margin: '10px 0'}}/>
+      </CustomCard>
+      <CustomCard >
+        <Skeleton variant="text" width="90%" height={100} style={{margin: '10px 0'}}/>
+        <Skeleton variant="text" width="90%" height={100} style={{margin: '10px 0'}}/>
+      </CustomCard>
+    </ContentWrapper>
   );
 };
 
@@ -100,4 +94,40 @@ const ColorButton = styled(Button)<{ active?: boolean }>`
             background-color: ${(props) => (props.active ? styles.colors.activeHover : styles.colors.backgroundHover)};
         }
     }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  width: 30%;
+  flex-direction: column;
+
+  @media (max-width: 750px) {
+    gap: 10px;
+      width: 100%;
+  }
+`;
+
+const FilterCard = styled(Card)`
+    width: 100%;
+
+  border-radius: ${styles.rounded.xl};
+
+  @media (max-width: 750px) {
+      width: 100%;
+  }
+`;
+
+const CustomCard = styled(Card)`
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+  border-radius: ${styles.rounded.xl};
+
+
+  @media (max-width: 750px) {
+display: none;
+  }
 `;

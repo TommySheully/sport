@@ -59,7 +59,7 @@ const News = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', width: '70%' }}>
+    <ContentWrapper>
       <Card sx={{ w: '100%', borderRadius: styles.rounded.xl, padding: '20px' }}>
         <div style={{ display: 'flex', width: '100%', gap: '5px' }}>
           <Typography gutterBottom variant="body2" component="div" color="text.secondary">
@@ -121,7 +121,7 @@ const News = () => {
         <Skeleton variant="rectangular" width="100%" height={200} />
       </Card>
 
-    </div>
+    </ContentWrapper>
   );
 };
 
@@ -136,5 +136,17 @@ const ColorButton = styled(Button)<ButtonProps>`
     &:hover {
       background-color: ${styles.colors.background};
     }
+  }
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  gap: 30px;
+  width: 65%;
+  flex-direction: column;
+
+  @media (max-width: 750px) {
+    gap: 10px;  
+    width: 100%;
   }
 `;

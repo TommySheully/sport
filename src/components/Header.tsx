@@ -1,6 +1,6 @@
 import React from 'react';
-import { arrow_down, kz, logo, profile, ru } from '@/assets';
-import { AppBar, Box, Button, Container, Link, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { arrow_down, kz, logo, menu, profile, ru } from '@/assets';
+import { AppBar, Box, Button, Link, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import styled from 'styled-components';
 import styles from '@/config/styles.ts';
 import { pages } from '@/config/pages.ts';
@@ -12,7 +12,13 @@ function Header() {
 
   return (
     <AppBar position="static" color="default">
-      <Container sx={{ padding: ' 14px 0', width: '100%', maxWidth: '1160px' }}>
+      <MobileMenu>
+        <img src={logo} alt="logo" />
+        <Button color="inherit" sx={{ fontSize: '14px' }} onClick={(e) => setIsActiveProfile(e.currentTarget)}>
+          <img src={menu} alt="profile" />
+        </Button>
+      </MobileMenu>
+      <DesktopHeader>
         <Toolbar sx={{ gap: '15px' }}>
           <img src={logo} alt="logo" />
           <LeftBlock>
@@ -65,7 +71,7 @@ function Header() {
             </Menu>
           </RightBlock>
         </Toolbar>
-      </Container>
+      </DesktopHeader>
     </AppBar>
   );
 }
@@ -85,3 +91,24 @@ const LeftBlock = styled('div')(() => ({
   fontFamily: 'Inter',
   gap: '5px',
 }));
+
+const MobileMenu = styled('div')`
+  display: none;
+
+  @media (max-width: 1160px) {
+    display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      width: 100%;
+  }
+`;
+
+const DesktopHeader = styled('div')`
+  display: flex;\
+    justify-content: center;
+  flex-grow: 1;
+
+  @media (max-width: 1160px) {
+    display: none;
+  }
+`;

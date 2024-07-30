@@ -1,3 +1,4 @@
+import menu from './header/menu.svg';
 import competitions from './header/competitions.svg';
 import arrow_down from './header/arrow_down.svg';
 import home from './header/home.svg';
@@ -23,6 +24,7 @@ import konstantin from './news/user/Konst.png';
 
 export {
   konstantin,
+  menu,
   artem,
   vadim,
   competitions,
